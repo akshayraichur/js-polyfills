@@ -1,5 +1,8 @@
 // Implementing a reduce function on Array methods.
 Array.prototype.myReduce = function (callbackFn, initialValue) {
+  if (this.length === 0 && initialValue === undefined) {
+    throw new TypeError("cant perform reduce of an empty array with no initial value");
+  }
   if (arguments.length < 2) {
     initialValue = this[0];
   }
