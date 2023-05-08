@@ -63,3 +63,28 @@ console.log(
     return acc;
   })
 );
+
+console.log("----------");
+
+// test 5
+const doubled = euros.reduce((total, amount) => {
+  total.push(amount * 2);
+  return total;
+}, []);
+console.log(doubled);
+
+console.log("----------");
+//test 6
+const data = [
+  { a: "happy", b: "robin", c: ["blue", "green"] },
+  { a: "tired", b: "panther", c: ["green", "black", "orange", "blue"] },
+  { a: "sad", b: "goldfish", c: ["green", "red"] },
+];
+
+const colors = data.reduce((total, amount) => {
+  amount.c.forEach((color) => {
+    total.push(color);
+  });
+  return total;
+}, []);
+console.log(colors);
